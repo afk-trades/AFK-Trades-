@@ -321,22 +321,23 @@ var symbols = { gold: ["tv_gold", "VANTAGE:XAUUSD"], btc: ["tv_btc", "VANTAGE:BT
 var tvReady = false;
 
 function makeChart(key) {
-  if (made[key] || !tvReady) return;
-  made[key] = true;
-  new TradingView.widget({
-    autosize: true,
-    symbol: symbols[key][1],
-    interval: "240",
-    timezone: "Etc/UTC",
-    theme: "dark",
-    style: "1",
-    locale: "en",
-    toolbar_bg: "#070707",
-    enable_publishing: false,
-    allow_symbol_change: false,
-    hide_side_toolbar: true,
-    container_id: symbols[key][0]
-  });
+    if (made[key] || !tvReady) return;
+    made[key] = true;
+    new TradingView.widget({
+        autosize: true,
+        symbol: symbols[key][1],
+        interval: "240",
+        timezone: "Etc/UTC",
+        theme: "dark",
+        style: "1",
+        locale: "en",
+        toolbar_bg: "#070707",
+        enable_publishing: false,
+        allow_symbol_change: false,
+        hide_side_toolbar: true,
+        container_id: symbols[key][0],
+        iframe_loading_compatibility_mode: true
+    });
 }
 
 function show(key) {
