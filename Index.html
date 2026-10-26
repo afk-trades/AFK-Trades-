@@ -2,8 +2,6 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="color-scheme" content="dark">
-<meta name="theme-color" content="#05070a">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>AFK Trades</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -121,102 +119,6 @@ footer p{margin:0 0 8px;font-size:13px}
   .rv{opacity:1;transform:none}
   html{scroll-behavior:auto}
 }
-
-/* ===== v2 upgrades ===== */
-.wrap{position:relative;z-index:1}
-#pbar{position:fixed;top:0;left:0;height:3px;width:100%;transform-origin:0 50%;transform:scaleX(0);background:linear-gradient(90deg,var(--green),var(--blue));z-index:20;box-shadow:0 0 12px var(--green)}
-header{transition:padding .3s,background .3s}
-header.sc .bar{padding:8px 0}header.sc .logo{height:44px}.logo{transition:height .3s}
-.hero{padding:150px 0 130px}
-.hero h1{background:linear-gradient(180deg,#fff 40%,#8b95a5);-webkit-background-clip:text;background-clip:text;color:transparent}
-.hero-art{position:absolute;right:-2%;top:12%;width:58%;height:70%;opacity:.9;pointer-events:none;z-index:0}
-.hero-art .ln{fill:none;stroke:var(--green);stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1400;stroke-dashoffset:1400;animation:draw 3.2s .4s cubic-bezier(.4,0,.2,1) forwards;filter:drop-shadow(0 0 8px rgba(46,224,138,.7))}
-.hero-art .ar{fill:url(#ag);opacity:0;animation:fadeIn 1.5s 2.4s forwards}
-.hero-art .dot{fill:var(--green);opacity:0;animation:fadeIn .4s 3.4s forwards}
-.hero-art .pulse{fill:none;stroke:var(--green);opacity:0;transform-origin:600px 20px;animation:ping 2s 3.5s infinite}
-@keyframes draw{to{stroke-dashoffset:0}}@keyframes fadeIn{to{opacity:1}}
-@keyframes ping{0%{opacity:.8;transform:scale(.4)}100%{opacity:0;transform:scale(3)}}
-.orb{position:absolute;border-radius:50%;filter:blur(70px);pointer-events:none;z-index:0;animation:float 14s ease-in-out infinite}
-.orb.a{width:340px;height:340px;background:rgba(46,224,138,.18);right:8%;top:-60px}
-.orb.b{width:300px;height:300px;background:rgba(91,140,255,.16);left:-60px;bottom:-40px;animation-delay:-6s}
-@keyframes float{50%{transform:translate(30px,40px) scale(1.12)}}
-.hero{background-size:auto,auto,72px 72px,72px 72px;animation:grid 30s linear infinite}
-@keyframes grid{to{background-position:0 0,0 0,72px 72px,72px 72px}}
-.mq{overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--surface);padding:16px 0}
-.mq div{display:flex;gap:56px;width:max-content;animation:mq 28s linear infinite;color:var(--muted);font-family:var(--serif);font-size:26px;white-space:nowrap}
-.mq span:nth-child(even){color:var(--green)}
-.mq:hover div{animation-play-state:paused}
-@keyframes mq{to{transform:translateX(-50%)}}
-.lbl{position:sticky;top:120px;align-self:start;display:flex;align-items:center;gap:10px}
-.lbl::before{content:"";width:0;height:2px;background:var(--green);transition:width .9s .3s}
-.rv.in .lbl::before{width:28px}
-section{position:relative}
-.rv.in .row,.rv.in .faq details{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
-.rv.in .row:nth-child(2),.rv.in .faq details:nth-child(2){animation-delay:.12s}
-.rv.in .row:nth-child(3),.rv.in .faq details:nth-child(3){animation-delay:.24s}
-.rv.in .faq details:nth-child(4){animation-delay:.36s}
-.row{position:relative;background-image:radial-gradient(420px circle at var(--mx,-200px) var(--my,-200px),rgba(46,224,138,.09),transparent 60%)}
-.row:hover .tile{transform:scale(1.08) rotate(-3deg)}.tile{transition:transform .4s}
-.btn{position:relative;overflow:hidden}
-.btn::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.45) 50%,transparent 70%);transform:translateX(-120%)}
-.btn:hover::after{transform:translateX(120%);transition:transform .7s}
-.btn:active{transform:scale(.97)}
-.chart{transition:box-shadow .5s,border-color .5s}.chart:hover{border-color:#2c3440;box-shadow:0 30px 90px rgba(46,224,138,.12)}
-.tab{position:relative}.tab[aria-selected="true"]{text-shadow:0 0 18px rgba(46,224,138,.5)}
-.code{padding:6px 14px;border:1px dashed rgba(46,224,138,.5);border-radius:8px;background:rgba(46,224,138,.06);text-align:center}
-.faq details{transition:background .3s,padding .3s}.faq details[open]{background:linear-gradient(90deg,rgba(46,224,138,.05),transparent);padding-left:14px}
-/* calendar */
-.cal-top{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:22px}
-.live{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--muted)}
-.live i{width:9px;height:9px;border-radius:50%;background:var(--green);box-shadow:0 0 0 0 rgba(46,224,138,.7);animation:beat 1.8s infinite}
-.live b{color:var(--ink);font-weight:500;font-variant-numeric:tabular-nums}
-@keyframes beat{70%{box-shadow:0 0 0 10px rgba(46,224,138,0)}100%{box-shadow:0 0 0 0 rgba(46,224,138,0)}}
-.sess{display:flex;gap:8px;flex-wrap:wrap}
-.ss{font-size:12.5px;padding:6px 12px;border:1px solid var(--line);border-radius:99px;color:var(--muted);background:var(--surface);display:flex;align-items:center;gap:8px;transition:.4s}
-.ss::before{content:"";width:7px;height:7px;border-radius:50%;background:#394150}
-.ss.on{color:var(--ink);border-color:rgba(46,224,138,.5)}.ss.on::before{background:var(--green);animation:beat 1.8s infinite}
-.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
-.chip{font:600 14px var(--sans);letter-spacing:.04em;color:var(--muted);background:var(--surface);border:1px solid var(--line);padding:9px 16px;border-radius:99px;cursor:pointer;transition:transform .25s,color .25s,border-color .25s,background .25s}
-.chip:hover{color:var(--ink);border-color:#2c3440;transform:translateY(-2px)}
-.chip[aria-pressed="true"]{color:#05070a;background:var(--green);border-color:var(--green);box-shadow:0 8px 24px rgba(46,224,138,.28);animation:pop .35s}
-@keyframes pop{50%{transform:scale(1.12)}}
-.seg{position:relative;display:inline-grid;grid-template-columns:repeat(2,1fr);border:1px solid var(--line);border-radius:10px;background:var(--surface);margin-bottom:22px;--i:0}
-.seg i{position:absolute;top:3px;bottom:3px;left:3px;width:calc((100% - 6px)/2);border-radius:7px;background:#1a2330;transform:translateX(calc(var(--i)*100%));transition:transform .4s cubic-bezier(.3,1.3,.4,1)}
-.seg button{position:relative;z-index:1;background:none;border:0;color:var(--muted);font:500 14px var(--sans);padding:10px 18px;cursor:pointer;transition:color .25s}
-.seg button[aria-pressed="true"]{color:var(--ink)}
-.cal-box{position:relative;min-height:760px;border:1px solid var(--line);border-radius:12px;background:var(--surface);overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.55)}
-.cal-box::before{content:"";position:absolute;inset:0;background:linear-gradient(100deg,transparent 30%,rgba(46,224,138,.07) 50%,transparent 70%);background-size:200% 100%;animation:shim 1.6s infinite;transition:opacity .6s}
-.cal-box.ld::before{opacity:0;animation:none}
-@keyframes shim{to{background-position:-200% 0}}
-.cal-box .tradingview-widget-container{position:relative;z-index:1;animation:rise .6s both}
-@media (max-width:820px){.hero-art{opacity:.35;width:100%}.lbl{position:static}.mq div{font-size:20px}.cal-box{min-height:640px}.seg{display:grid}}
-@media (prefers-reduced-motion:reduce){.mq div,.hero,.orb{animation:none!important}.hero-art .ln{stroke-dashoffset:0}.hero-art .ar,.hero-art .dot{opacity:1}}
-
-.fab{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:15;display:flex;align-items:center;gap:8px;padding:12px 18px;border-radius:99px;background:var(--green);color:#05070a;font-weight:600;font-size:14px;text-decoration:none;box-shadow:0 10px 30px rgba(46,224,138,.35);animation:fabp 2.6s infinite;transition:transform .25s}
-.fab:hover{transform:translateY(-3px) scale(1.04)}
-@keyframes fabp{50%{box-shadow:0 10px 44px rgba(46,224,138,.6)}}
-.calc{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px}
-.panelx{border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:26px;box-shadow:0 30px 80px rgba(0,0,0,.45)}
-.fld{display:block;margin-bottom:16px;font-size:14px;color:var(--muted)}
-.fld input,.fld select{display:block;width:100%;margin-top:6px;background:#070a0f;border:1px solid var(--line);border-radius:8px;color:var(--ink);font:500 16px var(--sans);padding:12px 14px;transition:border-color .25s,box-shadow .25s}
-.fld input:focus,.fld select:focus{outline:0;border-color:var(--green);box-shadow:0 0 0 3px rgba(46,224,138,.15)}
-.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.res{display:grid;gap:0}
-.res div{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:14px 0;border-bottom:1px solid var(--line);color:var(--muted);font-size:14px}
-.res b{color:var(--ink);font:400 28px var(--serif);font-variant-numeric:tabular-nums}
-.res .big b{color:var(--green);font-size:46px;text-shadow:0 0 24px rgba(46,224,138,.4)}
-.res b.flash{animation:pop .35s}
-.hint{font-size:12.5px;color:var(--muted);margin:14px 0 0}
-.gauge{position:relative;width:240px;height:120px;margin:10px auto 0;background:conic-gradient(from 270deg at 50% 100%,#ea3943 0 36deg,#ea8c00 36deg 72deg,#f3d42f 72deg 108deg,#93d900 108deg 144deg,#16c784 144deg 180deg,transparent 180deg);-webkit-mask:radial-gradient(circle 150px at 50% 100%,transparent 0 79px,#000 80px);mask:radial-gradient(circle 150px at 50% 100%,transparent 0 79px,#000 80px)}
-.gwrap{position:relative;width:240px;margin:0 auto}
-.needle{position:absolute;left:50%;bottom:0;width:4px;height:100px;margin-left:-2px;background:#fff;border-radius:4px;transform-origin:50% 100%;transform:rotate(-90deg);transition:transform 1.6s cubic-bezier(.3,1.4,.4,1);box-shadow:0 0 10px rgba(255,255,255,.6)}
-.hub{position:absolute;left:50%;bottom:-8px;width:18px;height:18px;margin-left:-9px;border-radius:50%;background:#fff}
-.fgv{text-align:center;font:400 64px/1 var(--serif);margin-top:22px}
-.fgl{text-align:center;color:var(--muted);margin:6px 0 18px}
-.fgh{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-.fgh div{border:1px solid var(--line);border-radius:10px;padding:10px;text-align:center;font-size:12.5px;color:var(--muted)}
-.fgh b{display:block;color:var(--ink);font:400 24px var(--serif)}
-@media (max-width:820px){.calc{grid-template-columns:1fr}.panelx{padding:20px}.fab span{display:none}.fab{padding:14px}}
 </style>
 </head>
 <body>
@@ -231,15 +133,13 @@ section{position:relative}
       <a href="https://youtube.com/@afk-trades?si=t1gnnqqZh5Rz-LPb" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24"><rect x="1" y="4.5" width="22" height="15" rx="4.5" fill="#ff0000"/><path d="M10 9l5.5 3-5.5 3z" fill="#fff"/></svg><span>YouTube</span></a>
       <a href="https://whatsapp.com/channel/0029VbCwyZ9DeON5dyoMS92Y" target="_blank" rel="noopener" aria-label="WhatsApp channel"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#25d366"/><path fill="#fff" d="M12 5.5a6.5 6.5 0 0 0-5.6 9.8L5.5 18.5l3.3-.9A6.5 6.5 0 1 0 12 5.5z"/></svg><span>WhatsApp channel</span></a>
       <a href="https://wa.me/447988517311" target="_blank" rel="noopener" aria-label="Chat with AFK on WhatsApp"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#25d366"/><path fill="#fff" d="M12 5.5a6.5 6.5 0 0 0-5.6 9.8L5.5 18.5l3.3-.9A6.5 6.5 0 1 0 12 5.5z"/></svg><span>Chat with AFK</span></a>
-    <a href="https://wa.me/447988517311?text=Hi%20I%20want%20to%20join%20premium%20group%20and%20know%20more%20about%20it" target="_blank" rel="noopener" aria-label="Chat with AFK on WhatsApp">Join Premium Group</a>
+      <a href="https://wa.me/447988517311?text=Hi%20I%20want%20to%20join%20premium%20group%20and%20know%20more%20about%20it" target="_blank" rel="noopener" aria-label="Chat with AFK on WhatsApp">Join Premium Group</a>
     </nav>
   </div>
 </header>
 
 <main>
   <section class="hero" style="border-top:0">
-    <i class="orb a"></i><i class="orb b"></i>
-    <svg class="hero-art" viewBox="0 0 600 300" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="ag" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2ee08a" stop-opacity=".28"/><stop offset="1" stop-color="#2ee08a" stop-opacity="0"/></linearGradient></defs><path class="ar" d="M0 250L60 220L110 235L170 170L230 190L290 120L350 150L410 80L470 100L530 40L600 20V300H0Z"/><path class="ln" d="M0 250L60 220L110 235L170 170L230 190L290 120L350 150L410 80L470 100L530 40L600 20"/><circle class="dot" cx="600" cy="20" r="5"/><circle class="pulse" cx="600" cy="20" r="10"/></svg>
     <div class="wrap">
       <h1 class="reveal">3 years of experience. Hundreds Of Thousands Of Pips Done.</h1>
       <p class="lead reveal d2">Live Vantage charts, funded account offers and our trading indicator in one place. Educational market analysis, not financial advice.</p>
@@ -248,13 +148,9 @@ section{position:relative}
         <a class="btn ghost" href="#accounts">Funded accounts</a>
         <a class="btn ghost" href="#indicator">Indicator</a>
         <a class="btn ghost" href="#calendar">Economic Calendar</a>
-        <a class="btn ghost" href="#calc">Position size calculator</a>
-        <a class="btn ghost" href="#fear">Fear and Greed</a>
       </div>
     </div>
   </section>
-
-  <div class="mq" aria-hidden="true"><div><span>Gold</span><span>Bitcoin</span><span>WTI Oil</span><span>Economic calendar</span><span>Funded accounts</span><span>Trading indicator</span><span>Gold</span><span>Bitcoin</span><span>WTI Oil</span><span>Economic calendar</span><span>Funded accounts</span><span>Trading indicator</span><span>Gold</span><span>Bitcoin</span><span>WTI Oil</span><span>Economic calendar</span><span>Funded accounts</span><span>Trading indicator</span><span>Gold</span><span>Bitcoin</span><span>WTI Oil</span><span>Economic calendar</span><span>Funded accounts</span><span>Trading indicator</span></div></div>
 
   <section id="charts">
     <div class="wrap split">
@@ -285,73 +181,12 @@ section{position:relative}
     </div>
   </section>
 
+  <h2>Economic Calendar</h2>
   <section id="calendar">
-    <div class="wrap split">
-      <p class="lbl">Economic calendar</p>
-      <div>
-        <h2>Economic calendar</h2>
-        <p class="intro">Choose the currencies you trade. The next news, forecast, previous and actual figures update live, and you can browse the week day by day. Times show in your local time zone.</p>
-        <div class="cal-top">
-          <div class="live"><i></i>Live now <b id="clk"></b></div>
-          <div class="sess" id="sess"></div>
-        </div>
-        <div class="chips" id="chips" role="group" aria-label="Currencies"><button class="chip" data-c="ALL" aria-pressed="true">All</button><button class="chip" data-c="USD" aria-pressed="false">USD</button><button class="chip" data-c="EUR" aria-pressed="false">EUR</button><button class="chip" data-c="GBP" aria-pressed="false">GBP</button><button class="chip" data-c="JPY" aria-pressed="false">JPY</button><button class="chip" data-c="AUD" aria-pressed="false">AUD</button><button class="chip" data-c="NZD" aria-pressed="false">NZD</button><button class="chip" data-c="CAD" aria-pressed="false">CAD</button><button class="chip" data-c="CHF" aria-pressed="false">CHF</button><button class="chip" data-c="CNY" aria-pressed="false">CNY</button></div>
-        <div class="seg" id="seg" role="group" aria-label="Impact"><i></i><button data-v="-1,0,1" aria-pressed="true">All news</button><button data-v="1" aria-pressed="false">High only</button></div>
-        <div class="cal-box" id="calbox"></div>
-        <p class="note" id="calnote"></p>
-      </div>
-    </div>
-  </section>
+<script type="module" src="https://widgets.tradingview-widget.com/w/en/tv-economic-calendar.js"></script>
 
-  <section id="calc">
-    <div class="wrap split">
-      <p class="lbl">Position size calculator</p>
-      <div>
-        <h2>Pip and position size calculator</h2>
-        <p class="intro">Enter your balance, risk and stop loss to get the lot size. Pip values assume a USD account and standard contract sizes, so check them against your broker.</p>
-        <div class="calc">
-          <div class="panelx">
-            <label class="fld">Instrument<select id="c-sym"><option>XAUUSD</option><option>EURUSD</option><option>GBPUSD</option><option>USDJPY</option><option>AUDUSD</option><option>NZDUSD</option><option>USDCAD</option><option>USDCHF</option><option>BTCUSD</option><option value="WTI">WTI Oil</option></select></label>
-            <div class="two"><label class="fld">Account balance (USD)<input id="c-bal" type="number" inputmode="decimal" value="1000" min="0"></label>
-            <label class="fld">Risk per trade (%)<input id="c-risk" type="number" inputmode="decimal" value="1" min="0" step="0.1"></label></div>
-            <div class="two"><label class="fld">Entry price<input id="c-en" type="number" inputmode="decimal" step="any"></label>
-            <label class="fld">Stop loss price<input id="c-sl" type="number" inputmode="decimal" step="any"></label></div>
-            <label class="fld">Take profit price (optional)<input id="c-tp" type="number" inputmode="decimal" step="any"></label>
-          </div>
-          <div class="panelx">
-            <div class="res">
-              <div class="big"><span>Lot size</span><b id="r-lot">—</b></div>
-              <div><span>Money at risk</span><b id="r-risk">—</b></div>
-              <div><span>Stop loss distance</span><b id="r-pips">—</b></div>
-              <div><span>Pip size</span><b id="r-psz">—</b></div>
-              <div><span>Pip value per 1 lot</span><b id="r-pv">—</b></div>
-              <div><span>Potential reward</span><b id="r-rew">—</b></div>
-              <div><span>Risk to reward</span><b id="r-rr">—</b></div>
-            </div>
-            <p class="hint" id="c-hint">Gold uses 1 pip = 0.10 and 100 oz per lot. Bitcoin uses 1 pip = 1.00 and 1 BTC per lot. WTI uses 1 pip = 0.01 and 1,000 barrels per lot.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="fear">
-    <div class="wrap split">
-      <p class="lbl">Fear and greed</p>
-      <div>
-        <h2>Fear and Greed Index</h2>
-        <p class="intro">This is the crypto Fear and Greed Index, a live 0 to 100 reading of market mood. It is a sentiment gauge, not a trade signal.</p>
-        <div class="panelx">
-          <div class="gwrap"><div class="gauge"></div><div class="needle" id="needle"></div><div class="hub"></div></div>
-          <div class="fgv" id="fgv">—</div>
-          <div class="fgl" id="fgl">Loading the latest reading</div>
-          <div class="fgh"><div>Yesterday<b id="fg1">—</b></div><div>7 days ago<b id="fg7">—</b></div><div>30 days ago<b id="fg30">—</b></div></div>
-          <p class="hint">Source: alternative.me. For stocks, see <a href="https://edition.cnn.com/markets/fear-and-greed" target="_blank" rel="noopener" style="text-decoration:underline">CNN Fear and Greed</a>.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
+<tv-economic-calendar countries="us" high-importance-only theme="dark" style="width: 400px; height: 400px"></tv-economic-calendar>
+</section>
   <section id="create">
     <div class="wrap split">
       <p class="lbl">Open an account</p>
@@ -480,7 +315,6 @@ section{position:relative}
     </div>
   </section>
 </main>
-<a class="fab" href="#calc" aria-label="Open position size calculator"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><rect x="4" y="3" width="16" height="18" rx="3"/><path d="M8 7h8M8 12h2M14 12h2M8 16h2M14 16h2"/></svg><span>Lot size calculator</span></a>
 
 <footer>
   <div class="wrap">
@@ -561,84 +395,6 @@ document.querySelectorAll("[data-code]").forEach(function (btn) {
   items.forEach(function (s) { io.observe(s); });
 })();
 </script>
-<script>
-(function(){
-  var bar=document.createElement("div");bar.id="pbar";document.body.appendChild(bar);
-  var hd=document.querySelector("header");
-  function sc(){var m=document.documentElement.scrollHeight-innerHeight;bar.style.transform="scaleX("+(m>0?scrollY/m:0)+")";hd.classList.toggle("sc",scrollY>40)}
-  addEventListener("scroll",sc,{passive:true});sc();
-  document.addEventListener("mousemove",function(e){var r=e.target.closest&&e.target.closest(".row");if(r){var b=r.getBoundingClientRect();r.style.setProperty("--mx",(e.clientX-b.left)+"px");r.style.setProperty("--my",(e.clientY-b.top)+"px")}});
-  var S=[["Sydney",22,7],["Tokyo",0,9],["London",8,17],["New York",13,22]];
-  var sess=document.getElementById("sess"),clk=document.getElementById("clk");
-  function tick(){
-    var n=new Date();
-    clk.textContent=n.toLocaleString([],{weekday:"short",day:"numeric",month:"short",hour:"2-digit",minute:"2-digit",second:"2-digit"});
-    var u=n.getUTCHours()+n.getUTCMinutes()/60,wd=n.getUTCDay(),wk=(wd===6||(wd===5&&u>=22)||(wd===0&&u<22));
-    sess.innerHTML=S.map(function(s){var on=!wk&&(s[1]<s[2]?(u>=s[1]&&u<s[2]):(u>=s[1]||u<s[2]));return '<span class="ss'+(on?' on':'')+'">'+s[0]+(on?' open':' closed')+'</span>'}).join("");
-  }
-  tick();setInterval(tick,1000);
-  var CC={USD:"us",EUR:"eu",GBP:"gb",JPY:"jp",AUD:"au",NZD:"nz",CAD:"ca",CHF:"ch",CNY:"cn"};
-  var sel=["ALL"],imp="-1,0,1",box=document.getElementById("calbox"),note=document.getElementById("calnote"),t;
-  function load(){
-    box.innerHTML="";
-    var list=sel[0]==="ALL"?Object.keys(CC):sel;
-    var e=document.createElement("tv-economic-calendar");
-    e.setAttribute("countries",list.map(function(c){return CC[c]}).join(","));
-    if(imp==="1")e.setAttribute("high-importance-only","");
-    e.setAttribute("theme","dark");
-    e.style.cssText="display:block;width:100%;height:760px;position:relative;z-index:1";
-    box.appendChild(e);
-    note.innerHTML='Calendar not showing? <a href="https://www.tradingview.com/economic-calendar/" target="_blank" rel="noopener" style="text-decoration:underline">Open it on TradingView</a>.';
-    setTimeout(function(){box.classList.add("ld")},2500);
-  }
-  function later(){clearTimeout(t);t=setTimeout(load,350)}
-  document.getElementById("chips").addEventListener("click",function(e){
-    var b=e.target.closest(".chip");if(!b)return;var c=b.dataset.c;
-    if(c==="ALL")sel=["ALL"];else{sel=sel.filter(function(x){return x!=="ALL"});var i=sel.indexOf(c);i>-1?sel.splice(i,1):sel.push(c);if(!sel.length)sel=["ALL"]}
-    document.querySelectorAll(".chip").forEach(function(x){x.setAttribute("aria-pressed",sel.indexOf(x.dataset.c)>-1?"true":"false")});later();
-  });
-  document.getElementById("seg").addEventListener("click",function(e){
-    var b=e.target.closest("button");if(!b)return;imp=b.dataset.v;var bs=[].slice.call(this.querySelectorAll("button"));
-    bs.forEach(function(x){x.setAttribute("aria-pressed",x===b?"true":"false")});this.style.setProperty("--i",bs.indexOf(b));later();
-  });
-  var once=new IntersectionObserver(function(en){if(en[0].isIntersecting){load();once.disconnect()}},{rootMargin:"300px"});
-  once.observe(box);
-})();
-</script>
-<script>
-(function(){
-  var SP={XAUUSD:[0.1,100,"q"],EURUSD:[1e-4,1e5,"q"],GBPUSD:[1e-4,1e5,"q"],AUDUSD:[1e-4,1e5,"q"],NZDUSD:[1e-4,1e5,"q"],USDJPY:[0.01,1e5,"b"],USDCAD:[1e-4,1e5,"b"],USDCHF:[1e-4,1e5,"b"],BTCUSD:[1,1,"q"],WTI:[0.01,1000,"q"]};
-  function g(i){return document.getElementById(i)}
-  function set(id,t){var e=g(id);if(e.textContent!==t){e.textContent=t;e.classList.remove("flash");void e.offsetWidth;e.classList.add("flash")}}
-  var d=function(n){return "$"+n.toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2})};
-  function calc(){
-    var s=SP[g("c-sym").value],bal=+g("c-bal").value,rk=+g("c-risk").value,en=+g("c-en").value,sl=+g("c-sl").value,tp=+g("c-tp").value;
-    var pip=s[0],pv=s[1]*pip*(s[2]==="b"&&en>0?1/en:1);
-    set("r-psz",String(pip));
-    if(!(s[2]==="b"&&!(en>0)))set("r-pv",d(pv));else set("r-pv","—");
-    var risk=bal*rk/100;set("r-risk",risk>0?d(risk):"—");
-    if(!(en>0&&sl>0&&en!==sl&&risk>0)){["r-lot","r-pips","r-rew","r-rr"].forEach(function(i){set(i,"—")});return}
-    var pips=Math.abs(en-sl)/pip,lot=risk/(pips*pv);
-    set("r-pips",pips.toFixed(1)+" pips");set("r-lot",lot.toFixed(2));
-    if(tp>0&&((tp>en)===(en>sl))){var rp=Math.abs(tp-en)/pip;set("r-rew",d(lot*rp*pv));set("r-rr","1 : "+(rp/pips).toFixed(2))}else{set("r-rew","—");set("r-rr","—")}
-  }
-  ["c-sym","c-bal","c-risk","c-en","c-sl","c-tp"].forEach(function(i){g(i).addEventListener("input",calc)});calc();
-  /* fear and greed */
-  var cols=[[25,"#ea3943"],[45,"#ea8c00"],[55,"#f3d42f"],[75,"#93d900"],[101,"#16c784"]];
-  function col(v){for(var i=0;i<cols.length;i++)if(v<cols[i][0])return cols[i][1]}
-  function fg(){
-    fetch("https://api.alternative.me/fng/?limit=31").then(function(r){return r.json()}).then(function(j){
-      var a=j.data,v=+a[0].value;
-      g("fgv").textContent=v;g("fgv").style.color=col(v);g("fgl").textContent=a[0].value_classification;
-      g("needle").style.transform="rotate("+(v/100*180-90)+"deg)";
-      [[1,"fg1"],[7,"fg7"],[30,"fg30"]].forEach(function(p){var x=a[p[0]];if(x){g(p[1]).textContent=x.value;g(p[1]).style.color=col(+x.value)}});
-    }).catch(function(){g("fgl").innerHTML='Live reading could not load. Official chart:<br><a href="https://alternative.me/crypto/fear-and-greed-index/" target="_blank" rel="noopener"><img src="https://alternative.me/crypto/fear-and-greed-index.png" alt="Crypto Fear and Greed Index" style="width:100%;max-width:520px;border-radius:10px;margin-top:10px"></a>'});
-  }
-  var io=new IntersectionObserver(function(e){if(e[0].isIntersecting){fg();io.disconnect()}},{rootMargin:"200px"});io.observe(g("fear"));
-  setInterval(fg,600000);
-})();
-</script>
-<script type="module" src="https://widgets.tradingview-widget.com/w/en/tv-economic-calendar.js"></script>
 <script src="https://s3.tradingview.com/tv.js" onload="tvLoaded()" onerror="tvFailed()"></script>
 </body>
 </html>
